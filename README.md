@@ -43,5 +43,6 @@
 </p>
 <hr>
 <p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=cipherxhub&show_icons=true&theme=dark&locale=en&layout=compact" alt="cipherxhub" /></p>
-<hr>
+
+
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=cipherxhub&show_icons=true&theme=dark&locale=en" alt="cipherxhub" /></p>
