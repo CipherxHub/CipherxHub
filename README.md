@@ -42,7 +42,7 @@
 <a href="https://pytorch.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg" alt="pytorch" width="60" height="60"/> </a>
 </p>
 <hr>
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=cipherxhub&show_icons=true&theme=dark&locale=en&layout=compact" alt="cipherxhub" /></p>
+<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=CipherxHub&show_icons=true&theme=dark&locale=en&layout=compact" alt="CipherxHub" /></p>
 
 
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=cipherxhub&show_icons=true&theme=dark&locale=en" alt="cipherxhub" /></p>
+<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=CipherxHub&show_icons=true&theme=dark&locale=en" alt="CipherxHub" /></p>
