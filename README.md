@@ -1,4 +1,4 @@
-<h1 align="center">Hi 👋, I'm Himalaya Yadav</h1>
+<h1 align="center">Hi 👋, I'm Himalaya Yadav </h1>
 <hr>
 <h3 align="center">I'm always looking to collaborate on projects that have a real impact on everyday life. If you're working on something meaningful, feel free to reach out — let's make a difference together!</h3>
 <hr>
