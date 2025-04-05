@@ -1,0 +1,21 @@
+name: 🌤️ Update Bhopal Weather in README
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'  # Every 30 minutes
+  workflow_dispatch:        # Manual trigger
+
+jobs:
+  update-weather:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Fetch Bhopal weather & update README
+        env:
+          WEATHER_KEY: ${{ secrets.WEATHER_KEY }}
+        run: |
+          CITY="Bhopal"
+          API="https
