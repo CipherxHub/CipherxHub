@@ -1,21 +1,26 @@
-name: 🌤️ Update Bhopal Weather in README
+- name: Fetch Bhopal weather & update README
+  env:
+    WEATHER_KEY: ${{ secrets.WEATHER_KEY }}
+  run: |
+    CITY="Bhopal"
+    API="https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${WEATHER_KEY}&units=metric"
+    RESPONSE=$(curl -s "$API")
+    
+    TEMP=$(echo "$RESPONSE" | jq '.main.temp' | xargs printf "%.0f")
+    DESC=$(echo "$RESPONSE" | jq -r '.weather[0].description' | sed 's/\b\(.\)/\u\1/g')
+    TIME=$(TZ="Asia/Kolkata" date "+%Y-%m-%d %H:%M:%S IST")
 
-on:
-  schedule:
-    - cron: '*/30 * * * *'  # Every 30 minutes
-  workflow_dispatch:        # Manual trigger
+    echo "### ☁️ Current Weather in $CITY" > weather.md
+    echo "Temperature: ${TEMP}°C" >> weather.md
+    echo "Condition: ${DESC}" >> weather.md
+    echo "Last updated: $TIME" >> weather.md
 
-jobs:
-  update-weather:
-    runs-on: ubuntu-latest
+    if grep -q "### ☁️ Current Weather in" README.md; then
+      awk '/### ☁️ Current Weather in/{flag=1;print;next}/^$/{flag=0} !flag' README.md > temp.md
+      cat temp.md weather.md > README.md
+    else
+      echo >> README.md
+      cat weather.md >> README.md
+    fi
 
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
-
-      - name: Fetch Bhopal weather & update README
-        env:
-          WEATHER_KEY: ${{ secrets.WEATHER_KEY }}
-        run: |
-          CITY="Bhopal"
-          API="https
+    rm -f temp.md weather.md
