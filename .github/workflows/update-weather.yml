@@ -1,26 +1,53 @@
-- name: Fetch Bhopal weather & update README
-  env:
-    WEATHER_KEY: ${{ secrets.WEATHER_KEY }}
-  run: |
-    CITY="Bhopal"
-    API="https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${WEATHER_KEY}&units=metric"
-    RESPONSE=$(curl -s "$API")
-    
-    TEMP=$(echo "$RESPONSE" | jq '.main.temp' | xargs printf "%.0f")
-    DESC=$(echo "$RESPONSE" | jq -r '.weather[0].description' | sed 's/\b\(.\)/\u\1/g')
-    TIME=$(TZ="Asia/Kolkata" date "+%Y-%m-%d %H:%M:%S IST")
+name: 🌤️ Update Bhopal Weather in README
 
-    echo "### ☁️ Current Weather in $CITY" > weather.md
-    echo "Temperature: ${TEMP}°C" >> weather.md
-    echo "Condition: ${DESC}" >> weather.md
-    echo "Last updated: $TIME" >> weather.md
+on:
+  schedule:
+    - cron: '*/30 * * * *'  # Every 30 minutes
+  workflow_dispatch:        # Manual trigger
 
-    if grep -q "### ☁️ Current Weather in" README.md; then
-      awk '/### ☁️ Current Weather in/{flag=1;print;next}/^$/{flag=0} !flag' README.md > temp.md
-      cat temp.md weather.md > README.md
-    else
-      echo >> README.md
-      cat weather.md >> README.md
-    fi
+jobs:
+  update-weather:
+    runs-on: ubuntu-latest
 
-    rm -f temp.md weather.md
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Fetch weather and update README
+        env:
+          WEATHER_KEY: ${{ secrets.WEATHER_KEY }}
+        run: |
+          CITY="Bhopal"
+          API="https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${WEATHER_KEY}&units=metric"
+          RESPONSE=$(curl -s "$API")
+
+          TEMP=$(echo "$RESPONSE" | jq '.main.temp' | xargs printf "%.0f")
+          DESC=$(echo "$RESPONSE" | jq -r '.weather[0].description' | sed 's/\b\(.\)/\u\1/g')
+          TIME=$(TZ="Asia/Kolkata" date "+%Y-%m-%d %H:%M:%S IST")
+
+          echo "### ☁️ Current Weather in $CITY" > weather.md
+          echo "Temperature: ${TEMP}°C" >> weather.md
+          echo "Condition: ${DESC}" >> weather.md
+          echo "Last updated: $TIME" >> weather.md
+
+          # Replace or append to README
+          if grep -q "### ☁️ Current Weather in" README.md; then
+            awk '/### ☁️ Current Weather in/{flag=1;print;next}/^$/{flag=0} !flag' README.md > temp.md
+            cat temp.md weather.md > README.md
+          else
+            echo -e "\n" >> README.md
+            cat weather.md >> README.md
+          fi
+
+          rm -f temp.md weather.md
+
+      - name: Commit and push changes
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          git config --global user.name "CipherxHub"
+          git config --global user.email "official.himalayaydv@gmail.com"
+          git remote set-url origin https://x-access-token:${GH_PAT}@github.com/${{ github.repository }}
+          git add README.md
+          git commit -m "🌤️ Auto-update Bhopal weather" || echo "No changes to commit"
+          git push
