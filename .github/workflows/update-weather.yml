@@ -3,7 +3,7 @@ name: 🌤️ Update Bhopal Weather in README
 on:
   schedule:
     - cron: '*/30 * * * *'  # Every 30 minutes
-  workflow_dispatch:        # Manual trigger
+  workflow_dispatch:        # Allow manual run
 
 jobs:
   update-weather:
@@ -30,7 +30,7 @@ jobs:
           echo "Condition: ${DESC}" >> weather.md
           echo "Last updated: $TIME" >> weather.md
 
-          # Replace or append to README
+          # Replace or update the weather section in README
           if grep -q "### ☁️ Current Weather in" README.md; then
             awk '/### ☁️ Current Weather in/{flag=1;print;next}/^$/{flag=0} !flag' README.md > temp.md
             cat temp.md weather.md > README.md
