@@ -1,0 +1,29 @@
+name: Keep GitHub Streak Alive 🇮🇳🔥
+
+on:
+  schedule:
+    - cron: '30 23 * * *'  # Runs daily at 5:00 AM IST (11:30 PM UTC)
+  workflow_dispatch:        # Optional: run it manually anytime
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Git config
+        run: |
+          git config --global user.name "CipherXHub"
+          git config --global user.email "official.himalayaydv@gmail.com"
+
+      - name: Update README with IST timestamp
+        run: |
+          TIMESTAMP="Last updated on $(TZ='Asia/Kolkata' date '+%Y-%m-%d %H:%M:%S %Z')"
+          grep -q "Last updated on" README.md && \
+            sed -i "s/Last updated on.*/$TIMESTAMP/" README.md || \
+            echo "$TIMESTAMP" >> README.md
+          git add README.md
+          git commit -m "🕒 Update README: $TIMESTAMP"
+          git push
