@@ -47,7 +47,6 @@ jobs:
         run: |
           git config --global user.name "CipherxHub"
           git config --global user.email "official.himalayaydv@gmail.com"
-          git remote set-url origin https://x-access-token:${GH_PAT}@github.com/${{ github.repository }}
           git add README.md
           git commit -m "🌤️ Auto-update Bhopal weather" || echo "No changes to commit"
-          git push
+          git push https://x-access-token:${GH_PAT}@github.com/${{ github.repository }} HEAD:main
