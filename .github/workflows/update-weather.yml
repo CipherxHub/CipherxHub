@@ -2,7 +2,7 @@ name: ⛅ Update weather & timestamp
 
 on:
   schedule:
-    - cron: '0 * * * *'  # hourly
+    - cron: '0 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -43,4 +43,5 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@v0.6.0
         with:
-          github_token: ${{ secrets.PAT }}  # ⬅️ This is the fix!
+          github_token: ${{ secrets.PAT }}
+          branch: main  # Change this if your default branch is `master`
