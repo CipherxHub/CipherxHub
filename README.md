@@ -4,11 +4,9 @@
 <hr>
 
 <!-- WEATHER_SECTION_START -->
-Weather in 🌆 **Bhopal**: _fetching…_  
+Weather in 🌆 **Bhopal**: fetching…  
 _Last updated: –_
 <!-- WEATHER_SECTION_END -->
-
-
 
 # 💫 About Me: 
 - **Current Work:** Automating Scripts  
