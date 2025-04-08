@@ -4,8 +4,8 @@
 <hr>
 
 <!-- WEATHER_SECTION_START -->
-Weather in 🌆 **Bhopal**: fetching…  
-_Last updated: –_
+Weather in 🌆 **Bhopal**: Clear sky, 37.13°C  
+_Last updated: 2025-04-08 11:27 IST_
 <!-- WEATHER_SECTION_END -->
 
 # 💫 About Me: 
