@@ -3,6 +3,13 @@
 <h3 align="center">I'm always looking to collaborate on projects that have a real impact on everyday life. If you're working on something meaningful, feel free to reach out — let's make a difference together!</h3>
 <hr>
 
+<!-- WEATHER_SECTION_START -->
+Weather in 🌆 **Bhopal**: _fetching…_  
+_Last updated: –_
+<!-- WEATHER_SECTION_END -->
+
+
+
 # 💫 About Me: 
 - **Current Work:** Automating Scripts  
 - **Learning:** Bash Scripting
