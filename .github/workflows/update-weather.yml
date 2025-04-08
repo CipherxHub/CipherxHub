@@ -2,7 +2,7 @@ name: ⛅ Update weather & timestamp
 
 on:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '0 * * * *'  # Every hour
   workflow_dispatch:
 
 jobs:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out repo
+      - name: Checkout repo
         uses: actions/checkout@v3
 
       - name: Fetch current weather for Bhopal
@@ -19,29 +19,35 @@ jobs:
           CITY="Bhopal"
           COUNTRY="IN"
           data=$(curl -s "https://api.openweathermap.org/data/2.5/weather?q=$CITY,$COUNTRY&appid=${{ secrets.WEATHER_API_KEY }}&units=metric")
+          echo "Raw response: $data"
           desc=$(echo "$data" | jq -r '.weather[0].description')
           temp=$(echo "$data" | jq -r '.main.temp')
           echo "weather=${desc^}, ${temp}°C" >> $GITHUB_OUTPUT
 
-      - name: Rewrite README with India time
+      - name: Rewrite README with current time
         run: |
-          timestamp=$(TZ="Asia/Kolkata" date +"%Y-%m-%d %H:%M %Z")
           weather="${{ steps.weather.outputs.weather }}"
-          sed -i '/<!-- WEATHER_SECTION_START -->/,/<!-- WEATHER_SECTION_END -->/c\
-          <!-- WEATHER_SECTION_START -->\
-          Weather in 🌆 **Bhopal**: '"$weather"'  \
-          _Last updated: '"$timestamp"'_\
-          <!-- WEATHER_SECTION_END -->' README.md
+          timestamp=$(TZ="Asia/Kolkata" date +"%Y-%m-%d %H:%M %Z")
+          echo "Using weather: $weather"
+          echo "Using timestamp: $timestamp"
+
+          awk '/<!-- WEATHER_SECTION_START -->/ {
+            print;
+            print "Weather in 🌆 **Bhopal**: '"$weather"'  \n_Last updated: '"$timestamp"'_";
+            skip=1;
+            next
+          }
+          /<!-- WEATHER_SECTION_END -->/ {skip=0}
+          !skip' README.md > temp.md && mv temp.md README.md
 
       - name: Commit & push if changed
         run: |
           git config user.name "CipherxHub"
           git config user.email "official.himalayaydv@gmail.com"
           git add README.md
-          git diff --quiet || git commit -m "chore: update Bhopal weather & timestamp"
-
-      - name: Push changes
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          github_token: ${{ secrets.PAT }}
-          branch: main  # Change this if your default branch is `master`
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: update Bhopal weather & timestamp"
+            git push https://x-access-token:${{ secrets.PAT }}@github.com/${{ github.repository }} HEAD:main
+          else
+            echo "No changes to commit"
+          fi
