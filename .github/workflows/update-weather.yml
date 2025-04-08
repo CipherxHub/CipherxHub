@@ -2,8 +2,8 @@ name: ⛅ Update weather & timestamp
 
 on:
   schedule:
-    - cron: '0 * * * *'    # every hour on the hour
-  workflow_dispatch:      # allow manual/manual runs
+    - cron: '0 * * * *'    # every hour
+  workflow_dispatch:
 
 jobs:
   update_readme:
@@ -21,11 +21,10 @@ jobs:
           data=$(curl -s "https://api.openweathermap.org/data/2.5/weather?q=$CITY,$COUNTRY&appid=${{ secrets.WEATHER_API_KEY }}&units=metric")
           desc=$(echo "$data" | jq -r '.weather[0].description')
           temp=$(echo "$data" | jq -r '.main.temp')
-          echo "::set-output name=weather::${desc^}, ${temp}°C"
+          echo "weather=${desc^}, ${temp}°C" >> $GITHUB_OUTPUT
 
       - name: Rewrite README with India time
         run: |
-          # get current IST timestamp
           timestamp=$(TZ="Asia/Kolkata" date +"%Y-%m-%d %H:%M %Z")
           weather="${{ steps.weather.outputs.weather }}"
           sed -i '/<!-- WEATHER_SECTION_START -->/,/<!-- WEATHER_SECTION_END -->/c\
@@ -39,9 +38,9 @@ jobs:
           git config user.name "CipherxHub"
           git config user.email "official.himalayaydv@gmail.com"
           git add README.md
-          git diff --quiet && echo "No update needed" || git commit -m "chore: update Bhopal weather & timestamp"
+          git diff --quiet || git commit -m "chore: update Bhopal weather & timestamp"
 
       - name: Push changes
         uses: ad-m/github-push-action@v0.6.0
         with:
-          github_token: ${{ secrets.PAT }}
+          github_token: ${{ secrets.PAT }}  # <-- USE YOUR PERSONAL TOKEN HERE
