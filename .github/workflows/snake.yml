@@ -1,27 +1,29 @@
-name: GitHub Snake
+name: Generate GitHub Snake
 
 on:
   schedule:
-    - cron: '*/30 * * * *'  # every 30 minutes
+    - cron: '*/30 * * * *'  # runs every 30 minutes
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+
       - name: Generate GitHub Snake
         uses: Platane/snk@v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            .github/workflows/github-snake.svg
-            .github/workflows/github-snake-dark.svg?palette=github-dark
-            .github/workflows/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
+            dist/github-snake.svg
+            dist/github-snake-dark.svg?palette=github-dark
+            dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
 
-      - name: Commit and Push generated snake files
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "Update GitHub Snake"
-          commit_user_name: "github-actions"
-          commit_user_email: "github-actions@github.com"
-          file_pattern: ".github/workflows/github-snake.svg,.github/workflows/github-snake-dark.svg,.github/workflows/ocean.gif"
+      - name: Commit and Push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add dist/*
+          git commit -m "Update GitHub Snake [skip ci]" || echo "No changes to commit"
+          git push
