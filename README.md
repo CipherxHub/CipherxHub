@@ -1,17 +1,19 @@
-<h1 align="center">Hi 👋, I'm Himalaya Yadav </h1>
-<hr>
-<h3 align="center">I'm always looking to collaborate on projects that have a real impact on everyday life. If you're working on something meaningful, feel free to reach out — let's make a difference together!</h3>
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&height=180&color=gradient&text=Think%20encrypted.%20Design%20securely.%20Build%20smart.&fontSize=34&animation=twinkling&fontAlignY=35&reversal=false" width="100%"/>
+</p>
+
+<div align="center">
+  
+ [![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=32&duration=6000&pause=1000&color=FFFFFF&background=FFF9F100&center=true&vCenter=true&multiline=true&random=false&width=600&height=120&lines=CipherxHub;Hi+%F0%9F%91%8B%2C+I'm+Himalaya+Yadav+)](https://git.io/typing-svg)
+</div>
+
+<h3 align="center" font="JetBrains+Mono">I'm always looking to collaborate on projects that have a real impact on everyday life. If you're working on something meaningful, feel free to reach out — let's make a difference together!</h3>
 <hr>
 
 <!-- WEATHER_SECTION_START -->
 Weather in 🌆 **Bhopal**: Broken clouds, 29.57°C  
 _Last updated: 2025-05-30 06:43 IST_
 <!-- WEATHER_SECTION_END -->
-
-# 💫 About Me: 
-- **Current Work:** Automating Scripts  
-- **Learning:** Bash Scripting
-
 
 ## 🌐 Socials:
 <div align="center">
