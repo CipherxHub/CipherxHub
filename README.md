@@ -9,7 +9,7 @@
     </a>
   </div>
  <div align="center">
-    <img src="https://media1.tenor.com/m/nSaPpNxpfPIAAAAC/hacker.gif" width="100%" alt="Cybersecurity GIF"/>
+    <img src="https://media1.tenor.com/m/nSaPpNxpfPIAAAAC/hacker.gif" width="550" alt="Cybersecurity GIF"/>
   </div>
 </div>
 
@@ -20,6 +20,7 @@
 Weather in 🌆 **Bhopal**: Broken clouds, 28.13°C  
 _Last updated: 2025-05-30 10:14 IST_
 <!-- WEATHER_SECTION_END -->
+
 ## 🌐 Socials:
 <div align="left" style="display: flex; justify-content: center;">
   <a href="https://linkedin.com/in/himalayaydv">
@@ -30,12 +31,10 @@ _Last updated: 2025-05-30 10:14 IST_
   </a>
 </div>
 
-
-
 <h2>💻 Tech Stack</h2>
 
 <h3>🔤 Programming Languages</h3>
-
+<img align="right" alt="Coding" width="450" src="https://user-images.githubusercontent.com/74038190/229223263-cf2e4b07-2615-4f87-9c38-e37600f8381a.gif">
 <p>
   <a href="https://en.wikipedia.org/wiki/C_(programming_language)"><img src="https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white"></a>
   <a href="https://isocpp.org/"><img src="https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white"></a>
