@@ -2,9 +2,15 @@
   <img src="https://capsule-render.vercel.app/api?type=waving&height=180&color=gradient&text=Think%20encrypted.%20Design%20securely.%20Build%20smart.&fontSize=34&animation=twinkling&fontAlignY=35&reversal=false" width="100%"/>
 </p>
 
-<div align="center">
-  
- [![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=32&duration=6000&pause=1000&color=FFFFFF&background=FFF9F100&center=true&vCenter=true&multiline=true&random=false&width=600&height=120&lines=CipherxHub;Hi+%F0%9F%91%8B%2C+I'm+Himalaya+Yadav+)](https://git.io/typing-svg)
+<div style="display: flex; align-items: center; justify-content: space-between; width:100%;">
+  <div align="center">
+    <a href="https://git.io/typing-svg">
+      <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=32&duration=6000&pause=1000&color=FFFFFF&background=FFF9F100&center=true&vCenter=true&multiline=true&random=false&width=600&height=120&lines=Hi+%F0%9F%91%8B%2C+I'm+Himalaya+Yadav+" alt="Typing SVG"/>
+    </a>
+  </div>
+ <div align="center">
+    <img src="https://media1.tenor.com/m/nSaPpNxpfPIAAAAC/hacker.gif" width="100%" alt="Cybersecurity GIF"/>
+  </div>
 </div>
 
 <h3 align="center" font="JetBrains+Mono">I'm always looking to collaborate on projects that have a real impact on everyday life. If you're working on something meaningful, feel free to reach out — let's make a difference together!</h3>
@@ -12,18 +18,18 @@
 
 <!-- WEATHER_SECTION_START -->
 Weather in 🌆 **Bhopal**: Haze, 27.13°C  
-_Last updated: 2025-05-30 09:10 IST_
+_Last updated: 2025-05-30 08:25 IST_
 <!-- WEATHER_SECTION_END -->
-
 ## 🌐 Socials:
-<div align="center">
-  <a href="https://linkedin.com/in/himalayaydv" style="display: inline-block; margin-right: 20px;">
-    <img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white" alt="LinkedIn" style="height: 40px;">
+<div align="left" style="display: flex; justify-content: center;">
+  <a href="https://linkedin.com/in/himalayaydv">
+    <img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white" alt="LinkedIn" height="30" />
   </a>
-  <a href="mailto:official.himalayaydv@gmail.com" style="display: inline-block;">
-    <img src="https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white" alt="Email" style="height: 40px;">
+  <a href="mailto:official.himalayaydv@gmail.com">
+    <img src="https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white" alt="Email" height="30" />
   </a>
 </div>
+
 
 
 <h2>💻 Tech Stack</h2>
