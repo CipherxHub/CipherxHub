@@ -137,8 +137,6 @@ _Last updated: 2025-05-30 09:49 IST_
 ## 🏆 GitHub Trophies
 ![](https://github-profile-trophy.vercel.app/?username=CipherxHub&theme=radical&no-frame=false&no-bg=false&margin-w=4)
 
-
-![Snake animation](https://raw.githubusercontent.com/CipherxHub/CipherxHub/output/github-snake.svg)
-
+![Snake animation (dark)](https://raw.githubusercontent.com/CipherxHub/CipherxHub/output/github-snake-dark.svg)
 
 ![Footer](https://capsule-render.vercel.app/api?type=wave&height=200&color=gradient&text=“Cyber-Security%20is%20much%20more%20than%20a%20matter%20of%20IT.”%20―%20Stephane%20Nappo&fontSize=25&fontAlignY=77&reversal=false&section=footer)
