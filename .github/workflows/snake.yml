@@ -1,0 +1,17 @@
+name: Snake
+
+on:
+  schedule:
+     - cron: '*/30 * * * *' 
+  workflow_dispatch:
+
+jobs:
+  snake:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Generate snake commits
+        uses: Platane/snk@v1
+        with:
+          author_name: 'CipherxHub'
+          author_email: 'official.himalayaydv.com'
