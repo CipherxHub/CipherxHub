@@ -1,31 +1,27 @@
-name: Generate GitHub Snake Animation
+name: GitHub Snake
 
 on:
   schedule:
-    - cron: '*/30 * * * *'  # Every 30 minutes
-  workflow_dispatch:  # Allow manual trigger too
+    - cron: '*/30 * * * *'  # every 30 minutes
+  workflow_dispatch:
 
 jobs:
-  generate-snake:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v3
+      - name: Generate GitHub Snake
+        uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            .github/workflows/github-snake.svg
+            .github/workflows/github-snake-dark.svg?palette=github-dark
+            .github/workflows/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
 
-    - name: Generate snake animation
-      uses: Platane/snk@v3
-      with:
-        github_user_name: ${{ github.repository_owner }}
-        outputs: |
-          dist/github-snake.svg
-          dist/github-snake-dark.svg?palette=github-dark
-          dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
-
-    - name: Commit and push snake animation
-      run: |
-        git config --local user.name "github-actions[bot]"
-        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git add dist/
-        git commit -m "Update GitHub snake animation" || echo "No changes to commit"
-        git push
+      - name: Commit and Push generated snake files
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Update GitHub Snake"
+          commit_user_name: "github-actions"
+          commit_user_email: "github-actions@github.com"
+          file_pattern: ".github/workflows/github-snake.svg,.github/workflows/github-snake-dark.svg,.github/workflows/ocean.gif"
