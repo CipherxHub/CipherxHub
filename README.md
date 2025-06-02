@@ -120,10 +120,10 @@ _Last updated: 2025-06-02 10:46 IST_
 <table style="border: none;">
   <tr>
     <td>
-      <img src="https://github-readme-stats.vercel.app/api?username=CipherxHub&theme=dark&hide_border=true&include_all_commits=false&count_private=false"/>
+      <img src="https://github-readme-stats.vercel.app/api?username=CipherxHub&theme=dark&hide_border=true&include_all_commits=true&count_private=true"/>
     </td>
     <td rowspan="2">
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=CipherxHub&theme=dark&hide_border=true&include_all_commits=false&count_private=false"/>
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=CipherxHub&theme=dark&hide_border=true&include_all_commits=true&count_private=true"/>
     </td>
   </tr>
   <tr>
