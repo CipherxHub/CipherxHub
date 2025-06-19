@@ -17,8 +17,8 @@
 <hr>
 
 <!-- WEATHER_SECTION_START -->
-Weather in 🌆 **Bhopal**: Light intensity drizzle, 26.13°C  
-_Last updated: 2025-06-19 10:04 IST_
+Weather in 🌆 **Bhopal**: Haze, 26.13°C  
+_Last updated: 2025-06-19 10:45 IST_
 <!-- WEATHER_SECTION_END -->
 
 ## 🌐 Socials:
