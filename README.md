@@ -17,8 +17,8 @@
 <hr>
 
 <!-- WEATHER_SECTION_START -->
-Weather in 🌆 **Bhopal**: Overcast clouds, 28.67°C  
-_Last updated: 2025-07-18 15:48 IST_
+Weather in 🌆 **Bhopal**: Haze, 27.13°C  
+_Last updated: 2025-07-18 16:17 IST_
 <!-- WEATHER_SECTION_END -->
 
 ## 🌐 Socials:
