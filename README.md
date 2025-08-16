@@ -17,8 +17,8 @@
 <hr>
 
 <!-- WEATHER_SECTION_START -->
-Weather in 🌆 **Bhopal**: Light rain, 30.11°C  
-_Last updated: 2025-08-16 12:43 IST_
+Weather in 🌆 **Bhopal**: Thunderstorm with light rain, 27.13°C  
+_Last updated: 2025-08-16 13:49 IST_
 <!-- WEATHER_SECTION_END -->
 
 ## 🌐 Socials:
