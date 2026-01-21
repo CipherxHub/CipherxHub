@@ -17,8 +17,8 @@
 <hr>
 
 <!-- WEATHER_SECTION_START -->
-Weather in 🌆 **Bhopal**: Clear sky, 13.31°C  
-_Last updated: 2026-01-21 05:12 IST_
+Weather in 🌆 **Bhopal**: Haze, 13.13°C  
+_Last updated: 2026-01-21 06:53 IST_
 <!-- WEATHER_SECTION_END -->
 
 ## 🌐 Socials:
