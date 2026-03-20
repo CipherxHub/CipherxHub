@@ -17,8 +17,8 @@
 <hr>
 
 <!-- WEATHER_SECTION_START -->
-Weather in 🌆 **Bhopal**: Broken clouds, 29.23°C  
-_Last updated: 2026-03-20 14:05 IST_
+Weather in 🌆 **Bhopal**: Scattered clouds, 28.13°C  
+_Last updated: 2026-03-20 15:06 IST_
 <!-- WEATHER_SECTION_END -->
 
 ## 🌐 Socials:
