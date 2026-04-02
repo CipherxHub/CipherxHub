@@ -43,7 +43,7 @@ jobs:
       - name: Commit & push if changed
         run: |
           git config user.name "CipherxHub"
-          git config user.email "official.himalayaydv@gmail.com"
+          git config user.email "96944968+CipherxHub@users.noreply.github.com"
           git add README.md
           if ! git diff --cached --quiet; then
             git commit -m "chore: update Bhopal weather & timestamp"
